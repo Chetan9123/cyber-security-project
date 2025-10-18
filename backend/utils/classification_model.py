@@ -23,9 +23,13 @@ scam_classifier = pipeline(
     device=-1  # CPU (-1) or GPU (0)
 )
 
+label_map = {
+    "LABEL_0": "not_scam",
+    "LABEL_1": "scam"
+}
+
+
 def classify_message(text: str):
-    """
-    Returns a dict: {'label': 'spam'/'ham', 'score': float}
-    """
-    result = scam_classifier(text)
-    return {"label": result[0]["label"], "score": result[0]["score"]}
+    result = scam_classifier(text)[0]  # {'label': 'LABEL_1', 'score': 0.9}
+    result["label"] = label_map.get(result["label"], result["label"])
+    return result

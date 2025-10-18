@@ -1,0 +1,9 @@
+transformers
+pydantic
+fastapi
+uvicorn
+torch
+sqlalchemy
+databases
+python-multipart
+passlib[bcrypt]

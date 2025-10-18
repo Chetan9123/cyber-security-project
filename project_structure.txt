@@ -1,0 +1,47 @@
+digital-footprint/
+│
+├──backend/
+│   |
+|   ├── app.py                     # Main FastAPI entry point
+|   ├── requirements.txt            # Python dependencies
+|   ├── config.py                   # Configuration (database, secrets)
+|   ├── database.py                 # Database connection
+|   ├── models.py                   # SQLAlchemy models
+|   ├── schemas.py                  # Pydantic schemas for requests/responses
+|   ├── routes/
+|   │   ├── __init__.py
+|   │   ├── scam_detection.py       # Scam detection endpoint
+|   │   ├── complaint.py            # Citizen complaint registration
+|   │   ├── auth.py                 # User login / signup (optional)
+|   │
+|   ├── utils/
+|   │   ├── __init__.py
+|   │   ├── classification_model.py # Transformer model loader
+|   │   ├── helpers.py              # Common helper functions
+|   │
+|   └── run.sh                      # Run commands for the backend
+|
+│
+├── frontend/
+│   ├── package.json                   # React dependencies
+│   ├── vite.config.js / webpack.config.js
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js                     # Main app file
+│   │   ├── index.js                   # Entry point
+│   │   ├── api/
+│   │   │   └── api.js                 # Axios API calls to backend
+│   │   ├── components/
+│   │   │   ├── MessageInput.js        # Input box for user messages
+│   │   │   ├── ResultCard.js          # Display scam/not-scam results
+│   │   │   └── Loader.js              # Loading animation component
+│   │   ├── pages/
+│   │   │   └── Dashboard.js           # Main dashboard UI
+│   │   ├── styles/
+│   │   │   └── app.css                # Styling
+│   │   └── assets/
+│   │       └── logo.png               # App logo
+│
+├── .gitignore
+└── README.md
